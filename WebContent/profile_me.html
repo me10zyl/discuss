@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="style/profile_me.css" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <div class="logo">
+        <a href="index.html"><img src="images/logo.png" ></a>
+    </div>
+    <div class="nav">
+        <a href="#"><img src="images/search.png" width="40px" height="40px" title="搜索"></a>
+        <a href="profile_me.html"><img src="images/pic2.jpg" width="35px" height="35px"></a>
+    </div>
+    <div class="newsCon"><a href="profile_me.html">1</a></div>
+</div>
+
+<div id="main_body">
+    <div class="simpleMesBar">
+        <div class="personImg">
+           <a href="#"><img src="images/pic2.jpg" width="48px" height="54px"></a>
+           <span id="name">testing123_gs</span>
+        </div>
+        <div class="Setting">设置</div>
+        <div class="Logout"><a href="login_before.html">注销</a></div>
+    </div>
+    <div class="detailMesCon">
+        <div class="detailMesCon_L">
+            <div class="hover">个人资料</div>
+            <div>我的主题</div>
+            <div>我的消息</div>
+        </div>
+        <div class="detailMesCon_R">
+            <div class="detailMesCon_R1" style="display: block">
+                <table class="detailMesCon_R1tab">
+                    <tr>
+                        <td class="detailMesCon_R1tabR">Email:</td>
+                        <td class="detailMesCon_R1tabL">540449517@qq.com</td>
+                    </tr>
+                    <tr>
+                        <td class="detailMesCon_R1tabR">用户名:</td>
+                        <td class="detailMesCon_R1tabL">testing123_gs</td>
+                    </tr>
+                    <tr>
+                        <td class="detailMesCon_R1tabR">密码:</td>
+                        <td class="detailMesCon_R1tabL">*******</td>
+                    </tr>
+                    <tr>
+                        <td class="detailMesCon_R1tabR">头像:</td>
+                        <td class="detailMesCon_R1tabL"><img src="images/pic2.jpg" width="58px" height="64px"><input type="submit" value="上传"/><input type="file" align="left"/></td>
+                    </tr>
+                    <tr>
+                        <td class="detailMesCon_R1tabR">个人简介:</td>
+                        <td><textarea cols="20" rows="10">喜欢三国杀 喜欢和大家一起讨论相关桌游的话题 技术 兴趣等等</textarea></td>
+                    </tr>
+                </table>
+                <div class="Modify">修改</div>
+                <div class="Save">保存</div>
+            </div>
+            <div class="detailMesCon_R1">
+                <ul>
+                    <li><a href="topic_single.html">来谈谈三国杀你们怎么玩？</a></li>
+                    <li><a href="topic_single.html">一起相约成都桌游馆</a></li>
+                    <li><a href="topic_single.html">大家通常都玩些什么呢？</a></li>
+                </ul>
+            </div>
+            <div class="detailMesCon_R1">
+                <ul>
+                    <li><a href="topic_single.html">曾艺伦回复你了</a></li>
+                    <li><a href="topic_single.html">王豆豆回复你</a></li>
+                    <li><a href="topic_single.html">也橙子也回复了你</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="footer_topimg"></div>
+    <div class="footer_imgs">
+        <div class="footer_img"><p>三国杀</p></div>
+        <div class="footer_img"><p>狼人之夜</p></div>
+        <div class="footer_img"><p>神仙道</p></div>
+        <div class="footer_img"><p>谁是卧底</p></div>
+        <div class="footer_img"><p>三国智</p></div>
+        <div class="footer_img"><p>小猪查理</p></div>
+        <div class="footer_img"><p>优诺牌</p></div>
+        <div class="footer_img"><p>双重间谍</p></div>
+        <div class="footer_img"><p>梦工厂</p></div>
+        <div class="footer_img"><p>核心世界</p></div>
+        <div class="footer_img"><p>卡坦岛</p></div>
+        <div class="footer_img"><p>飞天大盗</p></div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+    $(".detailMesCon_L div").click(function(){
+        $(this).addClass("hover").siblings().removeClass("hover");
+        $(".detailMesCon_R .detailMesCon_R1").eq($(this).index()).show().siblings().hide();
+    });
+}
+</script>
+</body>
+</html>

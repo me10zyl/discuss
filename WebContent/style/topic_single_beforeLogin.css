@@ -1,0 +1,112 @@
+*{margin: 0px; padding: 0px;}
+img{border: 0px 0px 0px 0px;}
+body{background: rgba(102,205,170,0.29);}
+#header{background:#66CDAA;width:100%;height: 80px;border-bottom: 1px solid #CCCCCC;position: fixed;top: 0;left: 0;right: 0;margin: 0 auto;}
+#header .logo{float: left;width: 130px;height: 40px;padding-top: 14px;padding-left: 30px;}
+#header .nav{float:right;width: 380px;height: 60px;font-family: "幼圆";font-size:18px;line-height:60px;}
+#header .nav a{text-decoration: none;float: left;font-weight: bold;color: #ffffff;padding: 8px 15px;}
+#header .nav a:hover{text-decoration: underline;}
+
+#main_body {
+    /*height:800px;*/
+    width: 100%;
+    margin-top: 100px;
+}
+#main_body .Topic_autor{
+    width: 1000px;
+    height: 247px;
+    margin: 10px auto;
+    background: rgba(255,153,102,0.4);
+}
+#main_body .Topic_autor .topicName{
+    width: 1000px;
+    height: 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.personImg{width:80px;height:80px;padding-top:15px;margin-left:20px;float:left}
+.personImg .name{font-family:"Lucida Bright";font-weight:bold;color:#ffffff;}
+.description{
+    width: 300px;
+    margin: 20px 50px;
+    float: left;
+    font-family:"幼圆";
+    font-weight:bold;
+    color:#ffffff;
+}
+.publicTime{
+    width: 200px;
+    height: 40px;
+    margin: -80px 820px;
+    float: left;
+    font-family:"幼圆";
+    font-weight:bold;
+    color:#ffffff;
+}
+#main_body .Replayer{
+    height: 200px;
+    width: 1000px;
+    margin: 10px auto;
+    background: rgba(255,153,102,0.3);
+}
+.replayBtn{
+    width: 60px;
+    height: 30px;
+    background:rgba(102,205,170,0.29);
+    float: left;
+    margin: 50px 860px;
+    font-family: "幼圆";
+    line-height: 30px;
+    text-align: center;
+    color: darkblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#main_body .Topic_autor .topicName p{margin: 10px 20px;font-family: "幼圆";font-size: 18px;color: #ffffff;font-weight: bold;}
+#main_body .Topic_autor .topicName span{margin: 10px 20px;font-family: "幼圆";font-size: 18px;color: #1E90FF;font-weight: bold;background:rgba(102,205,170,0.29);}
+
+#main_body .ReplayEdit{
+    height: 250px;
+    width: 1000px;
+    margin: 50px auto;
+    border: 2px solid rgba(255,255,255,0.5);;
+    /*background: yellowgreen;*/
+}
+#main_body .ReplayEdit .addPicLook{
+    width: 1000px;
+    height: 30px;
+    /*margin: 0 auto;*/
+    background: rgba(255,255,255,0.3);
+}
+#main_body .ReplayEdit .addPicLook ul{margin-left: 10px;}
+#main_body .ReplayEdit .addPicLook ul li{text-decoration: none;float: left;list-style: none;padding-left: 10px;font-size: 12px;color: blue;cursor: pointer;}
+.EditTex{
+    width: 1000px;
+    /*margin: 0px 98px;*/
+}
+.public{
+    width: 60px;
+    height: 30px;
+    background:rgba(102,205,170,0.29);
+    margin: 30px 900px;
+    font-family: "幼圆";
+    line-height: 30px;
+    text-align: center;
+    color: darkblue;
+    font-weight: bold;
+}
+#footer{background-color: #66CDAA;width: 100%;height:180px;margin: 0 auto;}
+#footer .footer_topimg{height:50px;width:100%;background: url("../images/line.png") no-repeat;background-size: 100% 50px;}
+#footer .footer_imgs{margin:0 auto;width:1190px;height:120px;}
+#footer .footer_img{height: 110px;width:90px;background-color: #66CDAA;border:1px solid #FFFFFF;float: left;margin: 0 3px;cursor:pointer;}
+#footer .footer_img p{font-family:"方正舒体";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
+#footer .footer_img p:hover{color: hotpink;}
+
+
+
+
+
+
+
+
+

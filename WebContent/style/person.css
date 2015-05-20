@@ -1,0 +1,58 @@
+*{margin: 0px; padding: 0px;}
+img{border: 0px 0px 0px 0px;}
+body{background: rgba(102,205,170,0.29);}
+#header{background:#66CDAA;width:100%;height: 80px;border-bottom: 1px solid #CCCCCC;position: fixed;top: 0;left: 0;right: 0;margin: 0 auto;}
+#header .logo{float:left;width: 116px;height: 35px;padding-top: 14px;padding-left: 30px;}
+#header .newsCon{width:36px;height:32px;background: url("../images/newsPic.png") no-repeat;float: right;margin-top:25px;margin-left:850px;line-height: 32px;text-align: center;}
+#header .newsCon a{text-decoration: none;color:darksalmon;font-weight: bold;font-family: "arial unicode ms"}
+#header .nav{float:right;width: 180px;height: 40px; margin:20px 0px;}
+#header .nav a{text-decoration: none;padding-left: 10px;}
+
+/*个人资料头像条*/
+#main_body{height:800px;  margin:100px auto 0 auto;}
+#main_body .simpleMesBar{width:1080px;height:93px;background:rgba(102,205,170,0.29);
+    /*margin:8px 130px;*/
+    margin:0 auto;
+}
+#main_body .simpleMesBar .personImg{width:48px;height:70px;padding-top:5px;margin-left:50px;float:left}
+#main_body .simpleMesBar .personImg #name{font-family:"Lucida Bright";font-weight:bold;color:#ffffff}
+#main_body .simpleMesBar .Setting{margin-left:700px;margin-top:30px;width:62px;height:27px;background:rgba(174,174,174,0.29);float:left;line-height:27px;text-align:center;font-family:"幼圆";font-size:16px;color:#ffffff;font-weight:bold}
+#main_body .simpleMesBar .Logout{margin-left:10px;margin-top:30px;width:62px;height:27px;background:#FF9966;float:left; }
+
+.Logout a{text-decoration: none;line-height:27px;text-align:center;font-family:"幼圆";font-size:16px;color:#ffffff;font-weight:bold;padding-left: 10px;}
+/*详细个人资料左边*/
+#main_body .detailMesCon{width:1080px;height:600px;
+    /*margin:30px 130px;*/
+    margin:30px auto;
+}
+#main_body .detailMesCon .detailMesCon_L{width:250px;height:276px;float:left;background:rgba(102,205,170,0.29);border:none;}
+#main_body .detailMesCon .detailMesCon_L div{width:250px;height:90px;margin-top:2px;font-size:20px;font-family:"幼圆";color:#ffffff;line-height:90px;text-align:center;border-bottom:3px solid rgba(225,225,225,0.8)}
+.hover{background:#FF9966}
+
+/*详细个人资料右边*/
+#main_body .detailMesCon .detailMesCon_R{width:780px;height:500px;float:right;margin-left:30px;border:1px solid rgba(102,205,170,0.29)}
+#main_body .detailMesCon .detailMesCon_R1{width:700px;height:500px;margin:20px 90px;display:none}
+
+.detailMesCon_R1 ul li{height: 50px;width:500px;background:rgba(102,205,170,0.29);margin-top:10px;line-height: 40px;list-style-image: url("../images/liPic.png");}
+.detailMesCon_R1 ul li:hover{background: #FF9966;}
+.detailMesCon_R1 ul li a{text-decoration: none;font-family: "幼圆";font-size: 16px;color: #ffffff;font-weight: bold;}
+#main_body .detailMesCon .detailMesCon_R1 .detailMesCon_R1tab{width:600px;height:400px;border-collapse:collapse}
+#main_body .detailMesCon .detailMesCon_R1 .detailMesCon_R1tabR{color:#66CDAA;font-size:20px;font-family:"幼圆";text-align:right}
+#main_body .detailMesCon .detailMesCon_R1 .detailMesCon_R1tabL{font-size:15px;font-family:"Arial";color:#999999;text-align:left}
+#main_body .detailMesCon .detailMesCon_R1 .Modify{margin-left:400px;margin-top:30px;width:62px;height:27px;background:rgba(174,174,174,0.29);float:left;line-height:27px;text-align:center;font-family:"幼圆";font-size:16px;color:#ffffff;font-weight:bold}
+#main_body .detailMesCon .detailMesCon_R1 .Save{margin-left:10px;margin-top:30px;width:62px;height:27px;background:#FF9966;float:left;line-height:27px;text-align:center;font-family:"幼圆";font-size:16px;color:#ffffff;font-weight:bold}
+
+
+#footer{background-color: #66CDAA;width: 100%;height:180px;margin: 0 auto;}
+#footer .footer_topimg{height:50px;width:100%;background: url("../images/line.png") no-repeat;background-size: 100% 50px;}
+#footer .footer_imgs{margin:0 auto;width:1190px;height:120px;}
+#footer .footer_img{height: 110px;width:90px;background-color: #66CDAA;border:1px solid #FFFFFF;float: left;margin: 0 3px;cursor:pointer;}
+#footer .footer_img p{font-family:"方正舒体";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
+#footer .footer_img p:hover{color: hotpink;}
+
+
+
+
+
+
+

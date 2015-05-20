@@ -1,0 +1,48 @@
+*{margin: 0px; padding: 0px;}
+img{border: 0px 0px 0px 0px;}
+body{background: rgba(102,205,170,0.29);}
+#header{background:#66CDAA;width:100%;height: 80px;border-bottom: 1px solid #CCCCCC;position: fixed;top: 0;left: 0;right: 0;margin: 0 auto;}
+#header .logo{float: left;width: 130px;height: 40px;padding-top: 14px;padding-left: 30px;}
+#header .nav{float:right;width: 380px;height: 60px;font-family: "幼圆";font-size:18px;line-height:60px;}
+#header .nav a{text-decoration: none;float: left;font-weight: bold;color: #ffffff;padding: 8px 15px;}
+#header .nav a:hover{text-decoration: underline;}
+
+/*主题列表展示*/
+#main_body{margin:100px auto 0 auto;}
+
+#main_body .bar{height: 40px; width:1290px;margin: 0 auto;}
+#main_body .bar .choiceList{width:118px;height:30px;background:rgba(204,204,204,0.21);border:rgba(204,204,204,0.2);font-size:16px;font-family:"幼圆";color:#868686;text-align:center;float:left;margin-left:100px}
+#main_body .latestTopic{width:80px;height:30px;background:rgba(204,204,204,0.21);border:rgba(204,204,204,0.2);font-size:16px;font-family:"幼圆";color:#868686;text-align:center;line-height:30px;float:left;margin-left:30px}
+#main_body .latestTopic:hover{background:darksalmon}
+
+/*表格展示主题列表*/
+#main_body .listShow{ margin:20px auto 0 auto;
+    width:1400px;}
+#main_body .listShow .listTab{margin-left:100px;border-style:none;border-collapse:collapse}
+#main_body .listShow .listTab th{padding:15px 70px;}
+#main_body .listShow .listTab a{text-decoration:none;color:#868686}
+#main_body .listShow .listTab td{padding:10px 0;}
+#main_body .listShow .listTab img{width:26px;height:30px}
+#main_body .listShow .listTab .tabstyle{background:rgba(102,205,170,0.09);color:#868686;font-family:"幼圆";font-size:16px}
+#main_body .listShow .listTab .tabstyleBg{background:rgba(255,255,255,0.5);color:#868686;font-family:"幼圆";font-size:16px;}
+.thrGuoKill{color:dodgerblue;font-weight: bold;}
+.wolfNight{color: #29e96b;font-weight: bold;}
+.godWay{color: #f264ff;font-weight: bold;}
+.whoIsSpy{color: #0d14e2;font-weight: bold;}
+.thrGuoZhi{color: #e21f6b;font-weight: bold;}
+.smellPigCharles{color: #cc9c6a;font-weight: bold;}
+.Uno{color: #ff4c8a;font-weight: bold;}
+.dobuleSpy{color: #2ddad0;font-weight: bold;}
+.dreamFactory{color: #e88a39;font-weight: bold;}
+.mainWord{color: #9244ca;font-weight: bold;}
+.cardIsland{color: #e2da2b;font-weight: bold;}
+.flySkyThief{color: #e21081;font-weight: bold;}
+#main_body .listShow .noTopic{width:200px;padding:20px 100px;font-size:16px;color:#868686;font-family:"幼圆";font-weight:bold;}
+/*主题列表展示结束*/
+
+#footer{background-color: #66CDAA;width: 100%;height:180px;margin: 0 auto;}
+#footer .footer_topimg{height:50px;width:100%;background: url("../images/line.png") no-repeat;background-size: 100% 50px;}
+#footer .footer_imgs{margin:0 auto;width:1190px;height:120px;}
+#footer .footer_img{height: 110px;width:90px;background-color: #66CDAA;border:1px solid #FFFFFF;float: left;margin: 0 3px;cursor:pointer;}
+#footer .footer_img p{font-family:"方正舒体";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
+#footer .footer_img p:hover{color: hotpink;}

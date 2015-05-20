@@ -1,0 +1,33 @@
+*{margin: 0px; padding: 0px;}
+img{border: 0px 0px 0px 0px;}
+#header{background:#66CDAA;width:100%;height: 80px;border-bottom: 1px solid #CCCCCC;position: fixed;top: 0;left: 0;right: 0;margin: 0 auto;}
+#header .logo{float: left;width: 130px;height: 40px;padding-top: 14px;padding-left: 60px;}
+#header .nav{float:right;width: 380px;height: 60px;font-family: "幼圆";font-size:18px;line-height:60px;}
+#header .nav a{text-decoration: none;float: left;font-weight: bold;color: #ffffff;padding: 8px 15px;}
+#header .nav a:hover{text-decoration: underline;}
+
+#main_body{height: 400px;margin: 100px auto 0 auto;}
+#main_body .love{width: 110px;height: 90px;margin: 20px auto 0 auto;
+    /*margin-left:640px;margin-top: 20px;*/
+}
+#main_body .love a{text-decoration: none;}
+#main_body .tableGame{background: url("../images/tableGame.png") no-repeat;width: 90px;height: 121px;margin: 0 auto;}
+#main_body .tableGame:hover{background: url("../images/tableGame_mouseOver.png") no-repeat;}
+
+#main_body .words{width: 470px;margin:20px auto;font-family: "幼圆";font-size: 18px;color: #ffffff;}
+#main_body .words .words2{font-family: Arial;font-size: 25px;margin: 20px 130px;}
+#main_body .words .words3{margin: 20px 150px;line-height: 60px;}
+#main_body .words .words3 a{text-decoration: none;color: #ffffff;}
+
+#footer{background-color: #66CDAA;width: 100%;height:180px;position:absolute;bottom:0;margin: 0 auto;}
+#footer .footer_topimg{height:50px;width:100%;background: url("../images/line.png") no-repeat;background-size: 100% 50px;}
+#footer .footer_imgs{margin:0 auto;width:1190px;height:120px;}
+#footer .footer_img{height: 110px;width:90px;background-color: #66CDAA;border:1px solid #FFFFFF;float: left;margin: 0 3px;cursor:pointer;}
+#footer .footer_img p{font-family:"方正舒体";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
+#footer .footer_img p:hover{color: hotpink;}
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+/*登录注册弹出框*/
+#mask{background:#000;opacity:0.5;filter:alpha(opacity=50);height:100%;width:100%;position:absolute;left:0;top:0;z-index:1000}
+.loginCon{width:380px;height:310px;background:url("../images/login_background.png") no-repeat top}
+#login_register{left:150px;top:250px}
+#Now_login{width:70px;left:250px;top:250px;}
+#close{width:30px;height:30px;background:url("../images/close_pic.png") no-repeat center;cursor:pointer;position:absolute;right:5px;top:10px}
+#close:hover{background-color:darksalmon;}
+.loginTab{margin:100px 50px;}
+
+.registerCon{width:470px;height:360px;background:url("../images/register_background.png") no-repeat top;}
+#register_login{left:250px;top:310px;}
+#Now_register{left:350px;top:310px;}
+.registerTab{margin:100px 80px;}
+
+#register,#login{position:fixed;left:30%;top:30%;z-index:1001;background-color:#ffffff;float:left;}
+#Now_login,#Now_register{width:80px;height:30px;line-height:30px;background:#66CDAA;font-family:"幼圆";font-size:18px;position:absolute;}
+#register_login,#login_register{width:80px;height:30px;line-height:30px;text-align:center;background:#66CDAA;font-family:"幼圆";font-size:18px;position:absolute;}
+.registerTab input,.loginTab input{ border: 1px solid #CCCCCC;font-size:18px;}
+#login a,#register a{text-decoration:none;color:#ffffff;}
+.loginTab,.registerTab{width:300px;font-size:18px;font-family:"幼圆";font-weight:bold;color:#66CDAA;position:absolute;line-height:35px}
+
