@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="net.xicp.zyl_me.hibernate.Topic" table="topic">
+    <id name="topicId" column="topic_id">
+      <generator class="native" />
+    </id>
+    <property name="topicTitle" column="topic_title" not-null="true" />
+    <property name="topicReplycount" column="topic_replyCount" />
+    <property name="topicScancount" column="topic_scanCount" />
+    <property name="topicActivetime" column="topic_activeTime" />
+    <many-to-one name="category" class="net.xicp.zyl_me.hibernate.Category" column="category_id" />
+  </class>
+</hibernate-mapping>
+

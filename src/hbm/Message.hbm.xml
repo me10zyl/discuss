@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="net.xicp.zyl_me.hibernate.Message" table="message">
+    <id name="messageId" column="message_id">
+      <generator class="native" />
+    </id>
+    <property name="messageContent" column="message_content" not-null="true" />
+    <property name="messageTime" column="message_time" not-null="true" />
+    <property name="messageFloor" column="message_floor" not-null="true" />
+    <many-to-one name="topic" class="net.xicp.zyl_me.hibernate.Topic" column="topic_id" />
+    <many-to-one name="user" class="net.xicp.zyl_me.hibernate.User" column="user_id" />
+  </class>
+</hibernate-mapping>
+
