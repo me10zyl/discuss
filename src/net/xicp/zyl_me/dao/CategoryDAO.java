@@ -2,16 +2,15 @@ package net.xicp.zyl_me.dao;
 
 import java.util.ArrayList;
 
-import net.xicp.zyl_me.AbstractDAO;
 import net.xicp.zyl_me.entity.Category;
 
-public abstract class CategoryDAO extends AbstractDAO<Category>
+public abstract class CategoryDAO implements DAOInterface<Category>
 {
-	public abstract void add(Category category);
+	public abstract boolean add(Category category);
 
-	public abstract void delete(int id);
+	public abstract boolean delete(int id);
 
-	public abstract void modify(Category newCategory);
+	public abstract boolean modify(Category newCategory);
 
 	public abstract ArrayList<Category> getAll();
 

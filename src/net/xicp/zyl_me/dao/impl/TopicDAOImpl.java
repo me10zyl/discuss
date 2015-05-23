@@ -10,19 +10,22 @@ import net.xicp.zyl_me.entity.Topic;
 public class TopicDAOImpl extends TopicDAO {
 
 	@Override
-	public void add(Topic topic) {
+	public boolean add(Topic topic) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(int id) {
+	public boolean delete(int id) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void modify(Topic topic) {
+	public boolean modify(Topic topic) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
@@ -39,9 +42,4 @@ public class TopicDAOImpl extends TopicDAO {
 		return null;
 	}
 
-	@Override
-	public Topic assemble(ResultSet rst) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

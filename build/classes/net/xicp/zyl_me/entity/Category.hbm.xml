@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="net.xicp.zyl_me.entity.Category" table="category">
+    <id name="category_id" column="category_id">
+      <generator class="native" />
+    </id>
+    <property name="category_name" column="category_name" not-null="true" />
+  </class>
+</hibernate-mapping>
+

@@ -12,7 +12,16 @@
 	<constant name="struts.configuration.xml.reload" value="true" />
 
 	<package name="default" namespace="/" extends="struts-default">
-
+		<action name="topic" class="net.xicp.zyl_me.action.TopicAction">
+			<result name="topic_list">topic_list.jsp</result>
+		</action>
+		<action name="category" class="net.xicp.zyl_me.action.CategoryAction">
+			<result name="footer">footer.jsp</result>
+		</action>
+		<action name="login" class="net.xicp.zyl_me.action.LoginAction">
+			<result name="header">header.jsp</result>
+			<result name="register_result">json/registerResult.jsp</result>
+		</action>
 	</package>
 	<include file="example.xml" />
 

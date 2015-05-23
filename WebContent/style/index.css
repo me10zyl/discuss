@@ -11,7 +11,7 @@ img{border: 0px 0px 0px 0px;}
     /*margin-left:640px;margin-top: 20px;*/
 }
 #main_body .love a{text-decoration: none;}
-#main_body .tableGame{background: url("../images/tableGame.png") no-repeat;width: 90px;height: 121px;margin: 0 auto;}
+#main_body .tableGame{width: 90px;height: 121px;margin: 0 auto;text-align: center;}
 #main_body .tableGame:hover{background: url("../images/tableGame_mouseOver.png") no-repeat;}
 
 #main_body .words{width: 470px;margin:20px auto;font-family: "幼圆";font-size: 18px;color: #ffffff;}

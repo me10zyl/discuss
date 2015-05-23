@@ -10,19 +10,22 @@ import net.xicp.zyl_me.entity.Message;
 public class MessageDAOImpl extends MessageDAO{
 
 	@Override
-	public void add(Message message) {
+	public boolean add(Message message) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(int id) {
+	public boolean delete(int id) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void modify(Message newMessage) {
+	public boolean modify(Message newMessage) {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}
@@ -35,12 +38,6 @@ public class MessageDAOImpl extends MessageDAO{
 
 	@Override
 	public Message getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Message assemble(ResultSet rst) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}

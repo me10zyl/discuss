@@ -50,29 +50,29 @@ window.onload=function(){
 
     var oRegister=document.createElement("div");
     oRegister.id="register";
-    oRegister.innerHTML="<div class='registerCon'>" +
-        "<table class='registerTab'>" +
+    oRegister.innerHTML="<div class='registerCon'><form action='login!register' method='post'><table class='registerTab'>" +
         "<tr>" +
         "<td  align='right'>Email：</td>" +
-        "<td><input type='text' name='username' size='15'/></td>" +
+        "<td><input type='text' name='user_email' size='15' id='user_email'/></td>" +
         "</tr>" +
         "<tr>" +
-        "<td  align='right'>用户名：</td>" +
-        "<td><input type='text' name='username' size='15'/></td>" +
+        "<td  align='right'>昵称：</td>" +
+        "<td><input type='text' name='user_nickname' size='15' id='user_nickname'/></td>" +
         "</tr>" +
         "<tr>" +
         "<td  align='right'>密码：</td>" +
-        "<td><input type='password' name='password' size='15'/></td>" +
+        "<td><input type='password' name='user_password' size='15' id='user_password'/></td>" +
         "</tr>" +
         "<tr>" +
         "<td  align='right'>确认密码：</td>" +
-        "<td><input type='password' name='password' size='15'/></td>" +
+        "<td><input type='password' name='user_password_confirm' size='15' id='user_password_confirm'/></td>" +
         "</tr>" +
         "</table>"+
-        "<img src='images/register_line.png' style='margin-top:300px' /><div id='register_login'><a href='#'>登&nbsp;录</a></div><div id='Now_register'><a href='#'>立即注册</a></div><div id='close'></div></div>";
-
+        "<img src='images/register_line.png' style='margin-top:300px' /><div id='register_login'><a href='javascript:void(0)'>登&nbsp;录</a></div><div id='Now_register'><a href='javascript:void(0)' onclick='register()'>立即注册</a></div><div id='close'></div></form></div>";
+	
     oBtn=document.getElementById("btnRegister");
     oBtn.onclick=function(){
         openNew(oRegister);
     }
+  
 };

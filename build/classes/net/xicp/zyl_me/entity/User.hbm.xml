@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="net.xicp.zyl_me.entity.User" table="user">
+    <id name="user_id" column="user_id">
+      <generator class="native" />
+    </id>
+    <property name="user_email" column="user_email" not-null="true" />
+    <property name="user_password" column="user_password" not-null="true" />
+    <property name="user_nickname" column="user_nickname" not-null="true" />
+    <property name="user_avatar" column="user_avatar" />
+    <property name="user_introduction" column="user_introduction" />
+  </class>
+</hibernate-mapping>
+

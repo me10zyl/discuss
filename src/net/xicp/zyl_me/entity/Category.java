@@ -14,11 +14,6 @@ public class Category
 
 	}
 
-	public Category(int category_id,String category_name)
-	{
-		this.category_id = category_id;
-		this.category_name = category_name;
-	}
 
 	public void setCategory_id(int category_id)
 	{

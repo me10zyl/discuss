@@ -8,7 +8,6 @@ import net.xicp.zyl_me.entity.*;
 public class Topic
 {
 	private int topic_id;
-	private int category_id;
 	private String topic_title;
 	private int topic_replyCount;
 	private int topic_scanCount;
@@ -21,16 +20,6 @@ public class Topic
 
 	}
 
-	public Topic(int topic_id,int category_id,String topic_title,int topic_replyCount,int topic_scanCount,String topic_activeTime)
-	{
-		this.topic_id = topic_id;
-		this.category_id = category_id;
-		this.topic_title = topic_title;
-		this.topic_replyCount = topic_replyCount;
-		this.topic_scanCount = topic_scanCount;
-		this.topic_activeTime = topic_activeTime;
-	}
-
 	public void setTopic_id(int topic_id)
 	{
 		this.topic_id = topic_id;
@@ -41,15 +30,6 @@ public class Topic
 		return topic_id;
 	}
 
-	public void setCategory_id(int category_id)
-	{
-		this.category_id = category_id;
-	}
-
-	public int getCategory_id()
-	{
-		return category_id;
-	}
 
 	public void setTopic_title(String topic_title)
 	{
@@ -113,6 +93,6 @@ public class Topic
 
 	public String toString()
 	{
-		return topic_id + "\t" + category_id + "\t" + topic_title + "\t" + topic_replyCount + "\t" + topic_scanCount + "\t" + topic_activeTime + "\t" + (this.category == null ? "" : "\t" + category) + (this.message.size() == 0? "" : "\t" + message);
+		return topic_id + "\t"  + "\t" + topic_title + "\t" + topic_replyCount + "\t" + topic_scanCount + "\t" + topic_activeTime + "\t" + (this.category == null ? "" : "\t" + category) + (this.message.size() == 0? "" : "\t" + message);
 	}
 }

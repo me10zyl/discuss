@@ -18,15 +18,6 @@ public class User
 
 	}
 
-	public User(int user_id,String user_email,String user_password,String user_nickname,String user_avatar,String user_introduction)
-	{
-		this.user_id = user_id;
-		this.user_email = user_email;
-		this.user_password = user_password;
-		this.user_nickname = user_nickname;
-		this.user_avatar = user_avatar;
-		this.user_introduction = user_introduction;
-	}
 
 	public void setUser_id(int user_id)
 	{

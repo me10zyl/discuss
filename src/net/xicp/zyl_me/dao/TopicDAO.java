@@ -2,16 +2,15 @@ package net.xicp.zyl_me.dao;
 
 import java.util.ArrayList;
 
-import net.xicp.zyl_me.AbstractDAO;
 import net.xicp.zyl_me.entity.Topic;
 
-public abstract class TopicDAO extends AbstractDAO<Topic>
+public abstract class TopicDAO implements DAOInterface<Topic>
 {
-	public abstract void add(Topic topic);
+	public abstract boolean add(Topic topic);
 
-	public abstract void delete(int id);
+	public abstract boolean delete(int id);
 
-	public abstract void modify(Topic topic);
+	public abstract boolean modify(Topic topic);
 
 	public abstract ArrayList<Topic> getAll();
 
