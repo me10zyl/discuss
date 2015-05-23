@@ -8,7 +8,7 @@
 </tr>
 <s:iterator value="topics" var="topic">
 <tr class="tabstyleBg" align="center">
-    <td align="center"><a href="topic_single.html"><s:property value="topic_title"></s:property></a></td>
+    <td align="center"><a href="topic!scanTopicSingle?topic_id=<s:property value="topic_id"/>"><s:property value="topic_title"></s:property></a></td>
     <td class="wolfNight"><s:property value="category.category_name"></s:property></td>
     <td><a href="profile_me.html"><img src="images/pic2.jpg"></a><a href="profile_me.html"><img src="images/pic3.jpg"></a><a href="profile_me.html"><img src="images/pic4.jpg"></a></td>
     <td><s:property value="topic_replyCount"></s:property></td>

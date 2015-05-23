@@ -3,6 +3,7 @@ package net.xicp.zyl_me.action;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Map;
 
 import net.xicp.zyl_me.dao.CategoryDAO;
@@ -25,6 +26,7 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	public static String TOPIC_SINGLE = "topic_single";
 	public static String RESULT = "result";
 	public static String TOPICS = "topics";
+	public static String MESSAGES = "messages";
 	private TopicDAO topicDAO;
 	private MessageDAO messageDAO;
 	private CategoryDAO categoryDAO;
@@ -36,7 +38,6 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	private String topic_title;
 	private int topic_id;
 	private boolean result;
-
 	private String message;
 
 	private Map<String, Object> session;
@@ -107,6 +108,47 @@ public class TopicAction extends ActionSupport implements SessionAware {
 		return TOPIC_SINGLE;
 	}
 	
+	public String getMessageList(){
+		System.out.println(topic_id);
+		messages = topicDAO.getMessagesById(topic_id);
+		return MESSAGES;
+	}
+	
+	public String setMessage()
+	{
+		User user = (User) session.get("user");
+		if(user == null)
+		{
+			result = false;
+			message = "游客不能回复";
+		}
+		else if(message_content == null || "".equals(message_content))
+		{
+			result = false;
+			message = "内容不能为空";
+		}else{
+			Message message2 = new Message();
+			message2.setMessage_content(message_content);
+			message2.setMessage_time(getCurrentTime());
+			Topic topic = topicDAO.getById(topic_id);
+			topic.setTopic_id(topic_id);
+			message2.setTopic(topic);
+			message2.setUser(user);
+			message2.setMessage_floor(topic.getMessages().size() + 1);
+			boolean success = messageDAO.add(message2);
+			if(success)
+			{
+				result = true;
+				message = "添加成功";
+			}else
+			{
+				result = false;
+				message = "回复失败";
+			}
+		}
+		return RESULT;
+	}
+	
 	public Topic getTopic() {
 		return topic;
 	}
@@ -165,8 +207,7 @@ public class TopicAction extends ActionSupport implements SessionAware {
 			result = false;
 			message = "请填写标题";
 		} else {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			String time = sdf.format(new Date(System.currentTimeMillis()));
+			String time = getCurrentTime();
 			Message message = new Message();
 			message.setMessage_content(message_content);
 			message.setMessage_floor(1);
@@ -204,6 +245,11 @@ public class TopicAction extends ActionSupport implements SessionAware {
 			}
 		}
 		return RESULT;
+	}
+	private String getCurrentTime() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sdf.format(new Date(System.currentTimeMillis()));
+		return time;
 	}
 
 	public void setTopic_id(int topic_id) {

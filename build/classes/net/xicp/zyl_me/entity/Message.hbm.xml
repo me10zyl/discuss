@@ -14,7 +14,7 @@
 		<many-to-one name="topic" class="net.xicp.zyl_me.entity.Topic"
 			column="topic_id" />
 		<many-to-one name="user" class="net.xicp.zyl_me.entity.User"
-			column="user_id" />
+			column="user_id" lazy="false"/>
 	</class>
 </hibernate-mapping>
 

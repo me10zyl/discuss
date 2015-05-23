@@ -60,7 +60,7 @@ public class TopicDAOImpl extends TopicDAO {
 
 	@Override
 	public Topic getById(int id) {
-		Topic topic = (Topic)HibernateUtil.getSession().get(Category.class, id);
+		Topic topic = (Topic)HibernateUtil.getSession().get(Topic.class, id);
 		HibernateUtil.closeSession();
 		return topic;
 	}
@@ -69,7 +69,7 @@ public class TopicDAOImpl extends TopicDAO {
 	public Message getFirstMessageById(int id) {
 		// TODO Auto-generated method stub
 		Query query = HibernateUtil.getSession().createQuery("from Message where topic_id = ? and message_floor = 1");
-		query.setInteger(1, id);
+		query.setInteger(0, id);
 		ArrayList<Message> messages = (ArrayList<Message>)query.list();
 		HibernateUtil.closeSession();
 		if(messages == null)
@@ -81,7 +81,7 @@ public class TopicDAOImpl extends TopicDAO {
 	public ArrayList<Message> getMessagesById(int id) {
 		// TODO Auto-generated method stub
 		Query query = HibernateUtil.getSession().createQuery("from Message where topic_id = ? order by message_floor");
-		query.setInteger(1, id);
+		query.setInteger(0, id);
 		ArrayList<Message> messages = (ArrayList<Message>)query.list();
 		HibernateUtil.closeSession();
 		return messages;

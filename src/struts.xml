@@ -17,7 +17,9 @@
 	</global-results>
 		<action name="topic" class="net.xicp.zyl_me.action.TopicAction">
 			<result name="topic_list">topic_list.jsp</result>
+			<result name="topic_single">topic_single.jsp</result>
 			<result name="topics">topics.jsp</result>
+			<result name="messages">messages.jsp</result>
 		</action>
 		<action name="category" class="net.xicp.zyl_me.action.CategoryAction">
 			<result name="footer">footer.jsp</result>
