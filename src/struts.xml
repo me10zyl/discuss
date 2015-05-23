@@ -10,17 +10,21 @@
 	<constant name="struts.custom.i18n.resources" value="gradsys" />
 	<constant name="struts.i18n.reload" value="true" />
 	<constant name="struts.configuration.xml.reload" value="true" />
-
 	<package name="default" namespace="/" extends="struts-default">
+	<global-results>
+		<result name="index">index.jsp</result>
+		<result name="result">json/result.jsp</result>
+	</global-results>
 		<action name="topic" class="net.xicp.zyl_me.action.TopicAction">
 			<result name="topic_list">topic_list.jsp</result>
+			<result name="topics">topics.jsp</result>
 		</action>
 		<action name="category" class="net.xicp.zyl_me.action.CategoryAction">
 			<result name="footer">footer.jsp</result>
+			<result name="categories">json/categories.jsp</result>
 		</action>
 		<action name="login" class="net.xicp.zyl_me.action.LoginAction">
 			<result name="header">header.jsp</result>
-			<result name="register_result">json/registerResult.jsp</result>
 		</action>
 	</package>
 	<include file="example.xml" />

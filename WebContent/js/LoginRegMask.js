@@ -33,15 +33,15 @@ window.onload=function(){
     oLogin.innerHTML="<div class='loginCon'>" +
         "<table class='loginTab'>" +
         "<tr>" +
-        "<td  align='right'>用户名：</td>" +
-        "<td><input type='text' name='username' size='15'/></td>" +
+        "<td  align='right'>邮箱：</td>" +
+        "<td><input type='text' name='username' size='15' id='login_user_email'/></td>" +
         "</tr>" +
         "<tr>" +
         "<td  align='right'>密码：</td>" +
-        "<td><input type='password' name='password' size='15' /></td>" +
+        "<td><input type='password' name='password' size='15' id='login_user_password'/></td>" +
         "</tr>" +
         "</table>"+
-        "<img src='images/login_line.png' style='margin-top:300px' /><div id='login_register'><a href='#'>注&nbsp;册</a></div><div id='Now_login'><a href='#'>立即登录</a></div><div id='close'></div></div>";
+        "<img src='images/login_line.png' style='margin-top:300px' /><div id='login_register'><a href='#'>注&nbsp;册</a></div><div id='Now_login'><a href='javascript:void(0)' onclick='login()'>立即登录</a></div><div id='close'></div></div>";
 
     var oBtn=document.getElementById("btnLogin");
     oBtn.onclick=function(){

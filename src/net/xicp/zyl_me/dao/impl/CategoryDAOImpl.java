@@ -46,7 +46,9 @@ public class CategoryDAOImpl extends CategoryDAO{
 	@Override
 	public Category getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Category category = (Category)HibernateUtil.getSession().get(Category.class, id);
+		HibernateUtil.closeSession();
+		return category;
 	}
 
 }

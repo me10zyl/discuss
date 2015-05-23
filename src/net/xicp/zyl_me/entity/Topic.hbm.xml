@@ -10,7 +10,11 @@
     <property name="topic_replyCount" column="topic_replyCount" />
     <property name="topic_scanCount" column="topic_scanCount" />
     <property name="topic_activeTime" column="topic_activeTime" />
-    <many-to-one name="category" class="net.xicp.zyl_me.entity.Category" column="category_id" />
+    <many-to-one name="category" class="net.xicp.zyl_me.entity.Category" column="category_id" lazy="false"/>
+    <set name="messages" lazy="false">
+    	<key column="topic_id"></key>
+    	<one-to-many class="net.xicp.zyl_me.entity.Message"/>
+   	</set>
   </class>
 </hibernate-mapping>
 

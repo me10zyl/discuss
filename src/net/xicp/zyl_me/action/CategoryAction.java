@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class CategoryAction extends ActionSupport {
 	public final static String FOOTER = "footer";
+	public final static String CATEGORIES = "categories";
 	private CategoryDAO categoryDAO;
 	private ArrayList<Category> categories;
 
@@ -32,5 +33,11 @@ public class CategoryAction extends ActionSupport {
 	public String getFooter() {
 		categories = categoryDAO.getAll();
 		return FOOTER;
+	}
+	
+	public String getCategoriesJson()
+	{
+		categories = categoryDAO.getAll();
+		return CATEGORIES;
 	}
 }

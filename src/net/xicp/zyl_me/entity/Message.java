@@ -80,8 +80,4 @@ public class Message
 		return topic;
 	}
 
-	public String toString()
-	{
-		return message_id + "\t"  + "\t"  + "\t" + message_content + "\t" + message_time + "\t" + message_floor + "\t" + (this.user == null ? "" : "\t" + user) + (this.topic == null ? "" : "\t" + topic);
-	}
 }

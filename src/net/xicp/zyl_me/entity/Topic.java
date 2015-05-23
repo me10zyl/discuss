@@ -1,9 +1,8 @@
 package net.xicp.zyl_me.entity;
 
 import java.util.ArrayList;
-import net.xicp.zyl_me.entity.*;
-
-import net.xicp.zyl_me.entity.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Topic
 {
@@ -13,7 +12,7 @@ public class Topic
 	private int topic_scanCount;
 	private String topic_activeTime;
 	private Category category;
-	private ArrayList<Message> message = new ArrayList<Message>();
+	private Set<Message> messages = new HashSet<Message>();
 
 	public Topic()
 	{
@@ -81,18 +80,14 @@ public class Topic
 		return category;
 	}
 
-	public void setMessage(ArrayList<Message> message)
+	public void setMessages(Set<Message> messages)
 	{
-		this.message = message;
+		this.messages = messages;
 	}
 
-	public ArrayList<Message> getMessage()
+	public Set<Message> getMessages()
 	{
-		return message;
+		return messages;
 	}
 
-	public String toString()
-	{
-		return topic_id + "\t"  + "\t" + topic_title + "\t" + topic_replyCount + "\t" + topic_scanCount + "\t" + topic_activeTime + "\t" + (this.category == null ? "" : "\t" + category) + (this.message.size() == 0? "" : "\t" + message);
-	}
 }

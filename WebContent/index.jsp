@@ -29,7 +29,6 @@
     </div>
 </div>
 <s:action name="category!getFooter"  namespace="/" executeResult="true"></s:action>
-<script src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
     $("#main_body .love").hover(function(){
         $("#main_body .love img").attr('src','images/love_mouseOver.png');
@@ -37,7 +36,6 @@
         $("#main_body .love img").attr('src','images/love.png');
     });
 </script>
-<script src="js/LoginRegMask.js" type="text/javascript"></script>
-<script src="js/indexAjax.js" type="text/javascript"></script>
+
 </body>
 </html>

@@ -28,8 +28,9 @@ public class UserDAOImpl extends UserDAO {
 			// TODO: handle exception
 			transaction.rollback();
 			e.printStackTrace();
-		}
+		}finally{
 		HibernateUtil.closeSession();
+		}
 		return result;
 	}
 

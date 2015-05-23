@@ -127,3 +127,28 @@ function register()
 	else
 		alert('还冇全打勾奥!');
 }
+
+function login(){
+	var user_email = 'login_' + ids[0];
+	var user_password = 'login_' + ids[2];
+	$.ajax({
+		url : "login!login" ,
+		data : ids[0]+ '=' + $('#'+user_email).val() + '&' +ids[2]+'=' + $('#'+user_password).val(),
+		success : function(data)
+		{
+			var json = JSON.parse(data);
+			if(json.result)
+			{
+				loginsuccuss();
+			}else
+			{
+				alert(json.message);
+			}
+		}
+	})
+}
+
+function loginsuccuss()
+{
+	location.href = 'topic!scanTopicList';
+}

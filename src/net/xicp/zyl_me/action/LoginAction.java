@@ -1,13 +1,18 @@
 package net.xicp.zyl_me.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import net.xicp.zyl_me.dao.UserDAO;
 import net.xicp.zyl_me.entity.User;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements SessionAware {
 	public final static String HEADER = "header";
-	public final static String REGISTER_RESULT = "register_result";
+	public final static String REGISTER_RESULT = "result";
+	public final static String INDEX = "index";
 	public final static String ACTION_SCANTOPICLIST = "action_scantopiclist";
 	private boolean result = false;
 	private String message;
@@ -16,6 +21,7 @@ public class LoginAction extends ActionSupport {
 	private String user_nickname;
 	private String user_password;
 	private String user_password_confirm;
+	private Map<String, Object> session;
 
 	public String getUser_email() {
 		return user_email;
@@ -68,6 +74,13 @@ public class LoginAction extends ActionSupport {
 	public boolean isResult() {
 		return result;
 	}
+	
+	public String logout()
+	{
+		session.put("loginStatus", "logout");
+		session.remove("user");
+		return INDEX;
+	}
 
 	public String register() {
 		if (checkForm()) {
@@ -87,6 +100,36 @@ public class LoginAction extends ActionSupport {
 		return REGISTER_RESULT;
 	}
 
+	public String login() {
+		result = true;
+		System.out.println(user_email);
+		System.out.println(user_password);
+		if (user_email == null || "".equals(user_email)) {
+			result = false;
+			message = "邮箱为空!";
+		} else if (user_password == null || "".equals(user_password)) {
+			result = false;
+			message = "密码为空!";
+		} else {
+			User user = userDAO.getByUserEmail(user_email);
+			if (user == null) {
+				result = false;
+				message = "邮箱不存在!";
+			} else {
+				if (user.getUser_password().equals(user_password)) {
+					result = true;
+					message = "登陆成功!";
+					session.put("user", user);
+					session.put("loginStatus", "login");
+				} else {
+					result = false;
+					message = "密码错误!";
+				}
+			}
+		}
+		return REGISTER_RESULT;
+	}
+
 	public String checkEmail() {
 		if (user_email == null || "".equals(user_email)) {
 			result = false;
@@ -95,47 +138,44 @@ public class LoginAction extends ActionSupport {
 		checkIsEmailBeRegisted_();
 		return REGISTER_RESULT;
 	}
-	
-	public String checkNickname(){
+
+	public String checkNickname() {
 		if (user_nickname == null || "".equals(user_nickname)) {
 			result = false;
 			message = "昵称为空!";
-		}else
-		{
+		} else {
 			result = true;
 		}
 		return REGISTER_RESULT;
 	}
-	
-	public String checkPassword(){
+
+	public String checkPassword() {
 		System.out.println("LoginAction.checkPassword()");
 		if (user_password == null || "".equals(user_password)) {
 			result = false;
 			message = "密码为空!";
-		}else
-		{
+		} else {
 			result = true;
 		}
 		return REGISTER_RESULT;
 	}
-	
-	public String checkPasswordconfirm()
-	{
+
+	public String checkPasswordconfirm() {
 		System.out.println("LoginAction.checkPasswordconfirm()");
 		if (user_password_confirm == null || "".equals(user_password_confirm)) {
 			result = false;
 			message = "确认密码为空!";
 			return REGISTER_RESULT;
-		} 
+		}
 		if (!user_password_confirm.equals(user_password)) {
 			message = "密码与确认密码不相同!";
 			result = false;
-		}else
-		{
+		} else {
 			result = true;
 		}
 		return REGISTER_RESULT;
 	}
+
 	private boolean checkForm() {
 		boolean isRegisted = checkIsEmailBeRegisted_();
 		if (user_email == null || "".equals(user_email)) {
@@ -182,5 +222,11 @@ public class LoginAction extends ActionSupport {
 
 	public void setResult(boolean result) {
 		this.result = result;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		// TODO Auto-generated method stub
+		this.session = session;
 	}
 }

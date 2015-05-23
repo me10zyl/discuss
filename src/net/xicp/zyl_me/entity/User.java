@@ -88,9 +88,4 @@ public class User
 	{
 		return message;
 	}
-
-	public String toString()
-	{
-		return user_id + "\t" + user_email + "\t" + user_password + "\t" + user_nickname + "\t" + user_avatar + "\t" + user_introduction + "\t" + (this.message.size() == 0? "" : "\t" + message);
-	}
 }

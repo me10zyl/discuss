@@ -58,7 +58,7 @@ public class HibernateUtil {
 
 	public static Session getSession() throws HibernateException {
 		Session s = (Session) session.get();
-		if (s == null) {
+		if (s == null || !s.isOpen()) {
 			s = sessionFactory.openSession();
 			session.set(s);
 		}

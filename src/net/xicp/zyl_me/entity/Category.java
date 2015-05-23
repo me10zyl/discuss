@@ -45,8 +45,4 @@ public class Category
 		return topic;
 	}
 
-	public String toString()
-	{
-		return category_id + "\t" + category_name + "\t" + (this.topic.size() == 0? "" : "\t" + topic);
-	}
 }
