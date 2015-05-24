@@ -24,10 +24,10 @@
         <div class="topicDescription">
             <div class="personImg">
                 <a href="#"><img src="images/pic2.jpg" width="80px" height="80px"></a>
-                <span class="name"><s:property value="topic.messages.{user}[0].user_nickname"/></span>
+                <span class="name"><s:property value="topic.messages.{?#this.message_floor==1}.{user}[0].user_nickname"/></span>
             </div>
-            <div class="description"><s:property value="topic.messages.{message_content}[0]"/></div>
-            <div class="publicTime"><p><s:property value="topic.messages.{message_time}[0]"/></p></div>
+            <div class="description"><s:property value="topic.messages.{?#this.message_floor==1}.{message_content}[0]"/></div>
+            <div class="publicTime"><p><s:property value="topic.messages.{?#this.message_floor==1}.{message_time}[0]"/></p></div>
         </div>
     </div>
     <div id="replies">
@@ -95,7 +95,8 @@
     			var json = JSON.parse(data);
     			if(json.result)
     			{
-    				$('#replies').load("topic!getMessageList");
+    				$('#replies').load("topic!getMessageList?topic_id="+<s:property value="topic.topic_id"/>);
+    				$('.ReplayEdit textarea').val("");
     			}else
     			{
     				alert(json.message);

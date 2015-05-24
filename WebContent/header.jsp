@@ -34,7 +34,7 @@
     </div>
     <div class="newsCon"><a href="profile_me.html">1</a></div>
     <div class="userPicName">
-        <img src="images/pic2.jpg" width="35px" height="35px">
+        <a href="user!scanUserInformation"><img src="images/pic2.jpg" width="35px" height="35px" ></a>
         <span><s:property value="#session.user.user_nickname"></s:property></span>
     </div>
     </s:else>

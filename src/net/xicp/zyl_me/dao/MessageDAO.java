@@ -18,4 +18,5 @@ public abstract class MessageDAO implements DAOInterface<Message>
 
 	public abstract Message getById(int id);
 	
+	public abstract ArrayList<Message> getOthersMessagesByUserId(int user_id);
 }

@@ -111,6 +111,9 @@
     			if(json.result)
     			{
     				$('#listTab').load("topic!getTopicList");
+    				$('.newTopic input').val("");
+    				$('.newTopic textarea').val("");
+    				$(".newTopic").slideUp(1000);
     			}else
     			{
     				alert(json.message);

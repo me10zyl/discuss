@@ -134,6 +134,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		if (user_email == null || "".equals(user_email)) {
 			result = false;
 			message = "邮箱为空!";
+			return REGISTER_RESULT;
+		}else if(!user_email.matches("[\\w_\\.]+@[\\w_]+(\\.[\\w_]+)+"))
+		{
+			message = "邮箱格式不正确!";
+			result = false;
+			return REGISTER_RESULT;
 		}
 		checkIsEmailBeRegisted_();
 		return REGISTER_RESULT;
@@ -195,6 +201,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			message = "该用户名已被注册!";
 		} else if (!user_password.equals(user_password_confirm)) {
 			message = "密码与确认密码不相同!";
+			result = false;
+		}else if(!user_email.matches("[\\w_\\.]+@[\\w_]+(.[\\w_]+)+"))
+		{
+			message = "邮箱格式不正确!";
 			result = false;
 		}
 		return result;

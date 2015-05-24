@@ -68,4 +68,22 @@ public class MessageDAOImpl extends MessageDAO{
 		// TODO Auto-generated method stub
 		HibernateUtil.getSession().save(message);
 	}
+	
+	
+
+	@Override
+	public ArrayList<Message> getOthersMessagesByUserId(int user_id) {
+		// TODO Auto-generated method stub
+		Query query = HibernateUtil.getSession().createQuery("from Message where topic_id in (select topic.topic_id from Message where user_id = ? and message_floor = 1) and message_floor != 1 and user_id != ?");
+		query.setInteger(0, user_id);
+		query.setInteger(1, user_id);
+		ArrayList<Message> messages = (ArrayList<Message>)query.list();
+		if(messages != null && messages.size() > 0)
+		{
+			return messages;
+		}
+		HibernateUtil.closeSession();
+		return null;
+	}
+
 }

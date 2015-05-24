@@ -22,4 +22,7 @@ public abstract class TopicDAO implements DAOInterface<Topic>
 	public abstract Message getFirstMessageById(int id);
 	
 	public abstract ArrayList<Message> getMessagesById(int id);
+	
+	public abstract ArrayList<Topic> getTopicsByUserId(int user_id);
+	
 }

@@ -93,4 +93,18 @@ public class TopicDAOImpl extends TopicDAO {
 		HibernateUtil.getSession().save(topic);
 	}
 
+	@Override
+	public ArrayList<Topic> getTopicsByUserId(int user_id) {
+		// TODO Auto-generated method stub
+		Query query = HibernateUtil.getSession().createQuery("from Topic where topic_id in (select topic.topic_id from Message where user_id = ? and message_floor = 1)");
+		query.setInteger(0, user_id);
+		ArrayList<Topic> topics = (ArrayList<Topic>)query.list();
+		if(topics != null && topics.size() > 0)
+		{
+			return topics;
+		}
+		HibernateUtil.closeSession();
+		return null;
+	}
+
 }
