@@ -43,9 +43,22 @@ public class MessageDAOImpl extends MessageDAO{
 
 	@Override
 	public boolean modify(Message newMessage) {
-		return false;
-		// TODO Auto-generated method stub
-		
+		Transaction transaction = null;
+		boolean result = false;
+		try {
+			// TODO Auto-generated method stub
+			transaction = HibernateUtil.getSession().beginTransaction();
+			HibernateUtil.getSession().update(newMessage);
+			transaction.commit();
+			result = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			transaction.rollback();
+			e.printStackTrace();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+		return result;		
 	}
 
 	@Override
@@ -86,4 +99,27 @@ public class MessageDAOImpl extends MessageDAO{
 		return null;
 	}
 
+	@Override
+	public long getUnReadMessagesCountByUserId(int user_id) {
+		Query query = HibernateUtil.getSession().createQuery("select count(*) from Message where topic_id in (select topic.topic_id from Message where user_id = ? and message_floor = 1) and message_floor != 1 and user_id != ? and message_read = 0");
+		query.setInteger(0, user_id);
+		query.setInteger(1, user_id);
+		long count = ((Long)query.iterate().next()).longValue();
+		HibernateUtil.closeSession();
+		return count;
+	}
+	
+	@Override
+	public ArrayList<Message> getUnReadMessagesByUserId(int user_id) {
+		Query query = HibernateUtil.getSession().createQuery("from Message where topic_id in (select topic.topic_id from Message where user_id = ? and message_floor = 1) and message_floor != 1 and user_id != ? and message_read = 0");
+		query.setInteger(0, user_id);
+		query.setInteger(1, user_id);
+		ArrayList<Message> messages = (ArrayList<Message>)query.list();
+		if(messages != null && messages.size() > 0)
+		{
+			return messages;
+		}
+		HibernateUtil.closeSession();
+		return null;
+	}
 }

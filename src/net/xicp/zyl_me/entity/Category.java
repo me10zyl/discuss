@@ -1,13 +1,23 @@
 package net.xicp.zyl_me.entity;
 
 import java.util.ArrayList;
-import net.xicp.zyl_me.entity.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Category
 {
 	private int category_id;
 	private String category_name;
-	private ArrayList<Topic> topic = new ArrayList<Topic>();
+	private Set<Topic> topics = new TreeSet<Topic>(new Comparator<Topic>() {
+		@Override
+		public int compare(Topic o1, Topic o2) {
+			// TODO Auto-generated method stub
+			return o2.getTopic_id() - o1.getTopic_id();
+		}
+		
+	});
 
 	public Category()
 	{
@@ -35,14 +45,14 @@ public class Category
 		return category_name;
 	}
 
-	public void setTopic(ArrayList<Topic> topic)
+	public void setTopics(Set<Topic> topics)
 	{
-		this.topic = topic;
+		this.topics = topics;
 	}
 
-	public ArrayList<Topic> getTopic()
+	public Set<Topic> getTopics()
 	{
-		return topic;
+		return topics;
 	}
 
 }

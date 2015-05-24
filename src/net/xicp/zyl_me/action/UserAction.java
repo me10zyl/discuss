@@ -13,8 +13,13 @@ import org.apache.struts2.interceptor.SessionAware;
 
 public class UserAction implements SessionAware{
 	public static final String PROFILE_ME="profile_me";
+	public static final String UNREADMESSAGE = "unReadMessage";
 	private ArrayList<Topic> topics;
 	private ArrayList<Message> replies;
+	private long unReadCount = 0;
+	public void setUnReadCount(long unReadCount) {
+		this.unReadCount = unReadCount;
+	}
 	public ArrayList<Message> getReplies() {
 		return replies;
 	}
@@ -60,8 +65,18 @@ public class UserAction implements SessionAware{
 	}
 	public String scanUserInformation(){
 		user = (User)session.get("user");
+		if(hover == 2)
+		{
+			ArrayList<Message> unReadMessages = messageDAO.getUnReadMessagesByUserId(user.getUser_id());
+			for(Message message : unReadMessages)
+			{
+				message.setMessage_read(true);
+				messageDAO.modify(message);
+			}
+		}
 		return scanUserInformationById(user.getUser_id());
 	}
+	
 	public String scanUserInformationById(int id)
 	{
 		topics = topicDAO.getTopicsByUserId(id);
@@ -69,6 +84,16 @@ public class UserAction implements SessionAware{
 		return PROFILE_ME;
 	}
 	
+	public String getUnReadMessageCount(){
+		user = (User)session.get("user");
+		unReadCount = messageDAO.getUnReadMessagesCountByUserId(user.getUser_id());
+		System.out.println("unread:"+ unReadCount);
+		return UNREADMESSAGE;
+	}
+	
+	public long getUnReadCount() {
+		return unReadCount;
+	}
 	@Override
 	public void setSession(Map<String, Object> session) {
 		// TODO Auto-generated method stub

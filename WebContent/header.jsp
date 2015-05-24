@@ -13,6 +13,9 @@
 #header .newsCon a{text-decoration: none;color:darksalmon;font-weight: bold;font-family: "arial unicode ms"}
 #header .nav{float:right;width: 180px;height: 40px; margin:20px 0px;}
 #header .nav a{text-decoration: none;padding-left: 10px;}
+.searchCon{width:400px;height:100px;background:url("images/imagesarchBg.png") no-repeat;position:absolute;right:10px;top:60px;line-height:120px;display:none}
+.inpt{width:290px;height:30px;margin-left:30px;font-size:18px;font-weight:bold;font-family:"幼圆";border:1px solid rgba(193,199,202,.5);color:#424242}
+.searchBtn{height:30px;width:40px;border:0px;margin-left:0px;font-weight:bold}
 </s:if>
 </style>  
 <div id="header">
@@ -29,18 +32,49 @@
     </s:if>
     <s:else>
      <div class="nav">
-        <a href="#"><img src="images/search.png" width="40px" height="40px" title="搜索"></a>
+        <a href="#"><img src="images/search.png" width="40px" height="40px" title="搜索" id="search"></a>
         <a href="login!logout"><img src="images/logoout.png"></a>
     </div>
-    <div class="newsCon"><a href="profile_me.html">1</a></div>
+    <div id="newMessage"></div>
     <div class="userPicName">
         <a href="user!scanUserInformation"><img src="images/pic2.jpg" width="35px" height="35px" ></a>
         <span><s:property value="#session.user.user_nickname"></s:property></span>
     </div>
+    <div class="searchCon">
+            <input type="text" class="inpt"/>
+            <input type="button" class="searchBtn" value="搜索"/>
+    </div>
     </s:else>
 </div>
-<s:if test="#session.loginStatus != 'login'">
 <script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$("#search").bind("click",function(){
+    $(".searchCon").slideToggle(300);
+});
+$("#main_body").bind("click",function(){
+    $(".searchCon").slideUp(300);
+})
+</script>
+<s:if test="#session.loginStatus != 'login'">
 <script src="js/LoginRegMask.js" type="text/javascript"></script>
 <script src="js/indexAjax.js" type="text/javascript"></script>
 </s:if>
+<s:else>
+<script type="text/javascript">
+	window.onload = function(){
+		$.ajax({
+			url: "user!getUnReadMessageCount",
+			success : function(data){
+				var json = JSON.parse(data);
+				if(json.count)
+				{
+					$('#newMessage').addClass("newsCon").append("<a href='user!scanUserInformation?hover=2'>"+json.count+"</a>");
+				}else{
+					$('#newMessage a').removeClass("newCon").remove();
+				}
+			}
+		})
+	}
+</script>
+</script>
+</s:else>

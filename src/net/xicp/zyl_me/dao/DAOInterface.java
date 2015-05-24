@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Vector;
 
+import net.xicp.zyl_me.entity.Message;
+
 /**
  * @author ZyL
  *
@@ -28,6 +30,7 @@ public interface DAOInterface<T>
 	public abstract boolean modify(T newUser) throws ClassNotFoundException,SQLException;
 	
 	public abstract boolean delete(int id) throws ClassNotFoundException,SQLException;
+
 	
 	
 }

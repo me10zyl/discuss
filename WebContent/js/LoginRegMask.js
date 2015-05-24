@@ -44,9 +44,12 @@ window.onload=function(){
         "<img src='images/login_line.png' style='margin-top:300px' /><div id='login_register'><a href='#'>注&nbsp;册</a></div><div id='Now_login'><a href='javascript:void(0)' onclick='login()'>立即登录</a></div><div id='close'></div></div>";
 
     var oBtn=document.getElementById("btnLogin");
-    oBtn.onclick=function(){
-        openNew(oLogin);
-    };
+    if(oBtn)
+    {
+	    oBtn.onclick=function(){
+	        openNew(oLogin);
+	    };
+    }
 
     var oRegister=document.createElement("div");
     oRegister.id="register";
@@ -71,8 +74,11 @@ window.onload=function(){
         "<img src='images/register_line.png' style='margin-top:300px' /><div id='register_login'><a href='javascript:void(0)'>登&nbsp;录</a></div><div id='Now_register'><a href='javascript:void(0)' onclick='register()'>立即注册</a></div><div id='close'></div></form></div>";
 	
     oBtn=document.getElementById("btnRegister");
-    oBtn.onclick=function(){
-        openNew(oRegister);
+    if(oBtn)
+    {
+	    oBtn.onclick=function(){
+	        openNew(oRegister);
+	    }
     }
   
 };

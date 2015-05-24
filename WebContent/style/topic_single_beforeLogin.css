@@ -6,11 +6,12 @@ body{background: rgba(102,205,170,0.29);}
 #header .nav{float:right;width: 380px;height: 60px;font-family: "幼圆";font-size:18px;line-height:60px;}
 #header .nav a{text-decoration: none;float: left;font-weight: bold;color: #ffffff;padding: 8px 15px;}
 #header .nav a:hover{text-decoration: underline;}
-
+body,html{height: 100%}
 #main_body {
     /*height:800px;*/
     width: 100%;
     margin-top: 100px;
+    min-height:100%;
 }
 #main_body .Topic_autor{
     width: 1000px;

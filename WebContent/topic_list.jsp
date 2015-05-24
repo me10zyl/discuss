@@ -18,10 +18,14 @@
 <s:action name="login!getHeader" executeResult="true" namespace="/"></s:action>
 <div id="main_body">
     <div class="bar">
-       <select class="choiceList choiceListHide" name='category_id'>
-                <option style='color:#A4929C'>&nbsp;&nbsp;&nbsp;所有主题</option>
+       <select class="choiceList choiceListHide" name='category_id' id="selectTopic">
+                <option style='color:#A4929C' value="-1">&nbsp;&nbsp;&nbsp;所有主题</option>
                 <s:iterator value="categories" var="category">
-                	 <option style="weight:bold" class="category" value="<s:property value="category_id"/>">&nbsp;&nbsp;&nbsp;<s:property value="category_name"/></option>
+                	 <option style="weight:bold" class="category2" value="<s:property value="category_id"/>" 
+              			<s:if test="select_category_id == category_id">
+              				 selected
+              			</s:if>  	 
+                	 >&nbsp;&nbsp;&nbsp;<s:property value="category_name"/></option>
                 </s:iterator>
         </select>
         <div class="latestTopic">最新主题</div>
@@ -84,9 +88,9 @@
             </ul>
             <textarea class="EditTex" rows="8" cols="100" name="message_content" id="message_content"></textarea>
             <select class="choiceList choiceListHide" name='category_id' id='category_id'>
-                <option style='color:#A4929C' class="category_all" value="-1">&nbsp;&nbsp;&nbsp;所有主题</option>
+                <option style='color:#A4929C' class="category_all" value="-1">&nbsp;所有主题</option>
                 <s:iterator value="categories" var="category">
-                	 <option style="weight:bold" class="category" value="<s:property value="category_id"/>">&nbsp;&nbsp;&nbsp;<s:property value="category_name"/></option>
+                	 <option style="weight:bold" class="category" value="<s:property value="category_id"/>">&nbsp;<s:property value="category_name"/></option>
                 </s:iterator>
             </select>
             <div class="public" onclick="setTopic()">发表</div>
@@ -95,12 +99,12 @@
     </div>
     
 </div>
-
 <s:action name="category!getFooter" executeResult="true" namespace="/"></s:action>
 
 <script src="js/jquery-1.11.1.min.js"></script>
 <script>
 	var colorList = [];
+	var colorList2 = {};
 	function setTopic()
 	{
 		$.ajax({
@@ -131,7 +135,7 @@
     	})
     	 $(".choiceList").bind("change",function(){
     		 var option = $(this).children('option:selected');
-    		 if(option.data("order"))
+    		 if(option.data("order") >= 0)
     		 {
     		 	$(this).css("color",colorList[option.data("order")]);
     		 }else
@@ -139,11 +143,27 @@
     			 $(this).css("color","#A4929C");
     		}
         });
+    	$("#selectTopic").change(function(){
+    		var option = $(this).children('option:selected');
+    		$('#listTab').load("topic!getTopicListByCategoryId","category_id="+option.val());
+    	})
         $(".category").each(function(){
-        	var color = '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).slice(-6)
+        	var color = '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).slice(-6);
         	colorList.push(color);
+        	colorList2[$(this).text().trim()] = color; 
         	$(this).css("color",color);
         	$(this).data("order",colorList.length - 1);
+        });
+        
+        $(".category2").each(function(){
+        	$(this).css("color",colorList[$(this).index() - 1]);
+        	$(this).data("order",$(this).index() - 1);
+        	if($(this).text().trim() == $(".choiceList option:selected:eq(0)").text().trim())
+            	$(".choiceList:eq(0)").css("color",colorList[$(this).index() - 1]);
+        });
+        
+        $(".category3").each(function(){
+        	$(this).css("color",colorList2[$(this).text().trim()]);
         });
 
             $(".addPicLook ul li").hover(function(){

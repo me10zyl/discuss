@@ -11,6 +11,7 @@
 		<property name="message_time" column="message_time" not-null="true" />
 		<property name="message_floor" column="message_floor"
 			not-null="true" />
+		<property name="message_read" column="message_read"/>
 		<many-to-one name="topic" class="net.xicp.zyl_me.entity.Topic"
 			column="topic_id" />
 		<many-to-one name="user" class="net.xicp.zyl_me.entity.User"

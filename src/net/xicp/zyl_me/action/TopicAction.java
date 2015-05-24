@@ -35,6 +35,14 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	private ArrayList<Topic> topics;
 	private String message_content;
 	private int category_id;
+	private int select_category_id;
+	public int getSelect_category_id() {
+		return select_category_id;
+	}
+	public void setSelect_category_id(int select_category_id) {
+		this.select_category_id = select_category_id;
+	}
+
 	private String topic_title;
 	private int topic_id;
 	private boolean result;
@@ -101,6 +109,42 @@ public class TopicAction extends ActionSupport implements SessionAware {
 		categories = categoryDAO.getAll();
 		return TOPIC_LIST;
 	}
+	public String scanTopicListByCategoryId() {
+		if(category_id == -1)
+		{
+			return scanTopicList();
+		}
+		select_category_id = category_id;
+		Category category = categoryDAO.getById(category_id);
+		topics = new ArrayList<Topic>();
+		Iterator<Topic> iterator = category.getTopics().iterator();
+		while(iterator.hasNext())
+		{
+			Topic topic = iterator.next();
+			System.out.println(topic);
+			topics.add(topic);
+		}
+		categories = categoryDAO.getAll();
+		return TOPIC_LIST;
+	}
+	
+	public String getTopicListByCategoryId() {
+		if(category_id == -1)
+		{
+			return getTopicList();
+		}
+		Category category = categoryDAO.getById(category_id);
+		select_category_id = category_id;
+		topics = new ArrayList<Topic>();
+		Iterator<Topic> iterator = category.getTopics().iterator();
+		while(iterator.hasNext())
+		{
+			Topic topic = iterator.next();
+			System.out.println(topic);
+			topics.add(topic);
+		}
+		return TOPICS;
+	}
 
 	public String scanTopicSingle(){
 		topic = topicDAO.getById(topic_id);
@@ -109,7 +153,6 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	}
 	
 	public String getMessageList(){
-		System.out.println(topic_id);
 		messages = topicDAO.getMessagesById(topic_id);
 		return MESSAGES;
 	}

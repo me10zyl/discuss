@@ -9,57 +9,58 @@ body{background: rgba(102,205,170,0.29);}
 #header .nav a{text-decoration: none;padding-left: 10px;}
 
 
-/*主题列表展示*/
-#main_body{margin:100px auto 0 auto}
+/*涓婚鍒楄〃灞曠ず*/
+body,html{height: 100%}
+#main_body{margin:100px auto 0 auto; min-height:100%;margin-bottom:-180px;}
 #main_body .bar{height:40px;width:1290px;margin:0 auto}
-.choiceList{width:118px;height:30px;font-size:16px;font-family:"幼圆";float:left;}
+.choiceList{width:118px;height:30px;font-size:16px;font-family:"骞煎渾";float:left;}
 .choiceListShow{background:rgba(204,204,204,0.21);border:rgba(204,204,204,0.2);color:#868686;margin-left:100px}
 .choiceListHide{background: #d2e4df;color: #7a7a7a;}
-#main_body .bar .latestTopic{width:80px;height:30px;background:rgba(204,204,204,0.21);border:rgba(204,204,204,0.2);font-size:16px;font-family:"幼圆";color:#868686;text-align:center;line-height:30px;float:left;margin-left:30px;cursor:pointer}
+#main_body .bar .latestTopic{width:80px;height:30px;background:rgba(204,204,204,0.21);border:rgba(204,204,204,0.2);font-size:16px;font-family:"骞煎渾";color:#868686;text-align:center;line-height:30px;float:left;margin-left:30px;cursor:pointer}
 #main_body .bar .latestTopic:hover{background:darksalmon}
-#main_body .bar .addNewTopic{width:100px;height:30px;background:darksalmon;border:rgba(204,204,204,0.2);font-size:16px;font-family:"幼圆";color:white;font-weight:bold;float:right;margin-right:60px;cursor:pointer}
+#main_body .bar .addNewTopic{width:100px;height:30px;background:darksalmon;border:rgba(204,204,204,0.2);font-size:16px;font-family:"骞煎渾";color:white;font-weight:bold;float:right;margin-right:60px;cursor:pointer}
 #main_body .bar .addNewTopic .addPic{width:30px;height:30px;margin-left:2px;background:url("../images/addPic.png") no-repeat;float:left}
 
 
-/*新主题编译框*/
+/*鏂颁富棰樼紪璇戞*/
 #main_body .newTopic{height:250px;width:100%;position:fixed;bottom:0;background:#66CDAA;display:none}
 .close{width:30px;height:30px;background:url("../images/close_pic.png") no-repeat center;cursor:pointer;position:absolute;top:10px}
 .close:hover{background-color:darksalmon}
 .close1{left:5px}
 .close2{right:5px}
 #main_body .newTopic .Topic{width:1200px;height:30px;margin:20px auto 0 auto}
-#main_body .newTopic .Topic .btnTopic{width:60px;height:29px;background:darksalmon;font-family:"幼圆";line-height:28px;text-align:center;color:#ffffff;font-weight:bold;letter-spacing:8px;float:left}
+#main_body .newTopic .Topic .btnTopic{width:60px;height:29px;background:darksalmon;font-family:"骞煎渾";line-height:28px;text-align:center;color:#ffffff;font-weight:bold;letter-spacing:8px;float:left}
 #main_body .newTopic .Topic input{width:1136px;float:left;line-height:25px;font-size:18px;color:#000000}
 #main_body .newTopic .addPicLook{margin:0 auto;width:1200px;height:30px;background:rgba(255,255,255,0.5)}
 #main_body .newTopic .addPicLook ul{margin-left:10px}
 #main_body .newTopic .addPicLook ul li{text-decoration:none;float:left;list-style:none;padding-left:10px;font-size:12px;color:blue;cursor:pointer}
 .EditTex{width:1200px;color:#868686}
-.public{width:60px;height:30px;background:#FF9966;float:right;font-family:"幼圆";line-height:30px;text-align:center;color:#ffffff;font-weight:bold;letter-spacing:8px;cursor:pointer}
-/*新主题编译框结束*/
+.public{width:60px;height:30px;background:#FF9966;float:right;font-family:"骞煎渾";line-height:30px;text-align:center;color:#ffffff;font-weight:bold;letter-spacing:8px;cursor:pointer}
+/*鏂颁富棰樼紪璇戞缁撴潫*/
 
 
-/*表格展示主题列表*/
+/*琛ㄦ牸灞曠ず涓婚鍒楄〃*/
 #main_body .listShow{margin:20px auto 0 auto;width:1400px}
 #main_body .listShow .listTab{margin-left:100px;border-style:none;border-collapse:collapse}
 #main_body .listShow .listTab th{padding:15px 70px}
 #main_body .listShow .listTab a{text-decoration:none;color:#868686}
 #main_body .listShow .listTab td{padding:10px 0}
 #main_body .listShow .listTab img{width:26px;height:30px}
-#main_body .listShow .listTab .tabstyle{background:rgba(102,205,170,0.09);color:#868686;font-family:"幼圆";font-size:16px}
-#main_body .listShow .listTab .tabstyleBg{background:rgba(255,255,255,0.5);color:#868686;font-family:"幼圆";font-size:16px;padding-left:70px}
-/*桌游类别颜色*/
-/*三国杀*/
-/*狼人之夜*/
-/*神仙道*/
-/*谁是卧底*/
-/*三国智*/
-/*小猪查理*/
-/*优诺牌*/
-/*双重间谍*/
-/*梦工厂*/
-/*核心世界*/
-/*卡坦岛*/
-/*飞天大盗*/
+#main_body .listShow .listTab .tabstyle{background:rgba(102,205,170,0.09);color:#868686;font-family:"骞煎渾";font-size:16px}
+#main_body .listShow .listTab .tabstyleBg{background:rgba(255,255,255,0.5);color:#868686;font-family:"骞煎渾";font-size:16px;padding-left:70px}
+/*妗屾父绫诲埆棰滆壊*/
+/*涓夊浗鏉�/
+/*鐙间汉涔嬪*/
+/*绁炰粰閬�/
+/*璋佹槸鍗у簳*/
+/*涓夊浗鏅�/
+/*灏忕尓鏌ョ悊*/
+/*浼樿鐗�/
+/*鍙岄噸闂磋皪*/
+/*姊﹀伐鍘�/
+/*鏍稿績涓栫晫*/
+/*鍗″潶宀�/
+/*椋炲ぉ澶х洍*/
 .thrGuoKill{color:dodgerblue;font-weight: bold;}
 .wolfNight{color: #29e96b;font-weight: bold;}
 .godWay{color: #f264ff;font-weight: bold;}
@@ -72,15 +73,15 @@ body{background: rgba(102,205,170,0.29);}
 .mainWord{color: #9244ca;font-weight: bold;}
 .cardIsland{color: #e2da2b;font-weight: bold;}
 .flySkyThief{color: #e21081;font-weight: bold;}
-/*桌游类别颜色结束*/
-#main_body .listShow .noTopic{width:200px;padding:20px 100px;font-size:16px;color:#868686;font-family:"幼圆";font-weight:bold;}
-/*主题列表展示结束*/
+/*妗屾父绫诲埆棰滆壊缁撴潫*/
+#main_body .listShow .noTopic{width:200px;padding:20px 100px;font-size:16px;color:#868686;font-family:"骞煎渾";font-weight:bold;}
+/*涓婚鍒楄〃灞曠ず缁撴潫*/
 
 #footer{background-color: #66CDAA;width: 100%;height:180px;margin: 0 auto;}
 #footer .footer_topimg{height:50px;width:100%;background: url("../images/line.png") no-repeat;background-size: 100% 50px;}
 #footer .footer_imgs{margin:0 auto;width:1190px;height:120px;}
 #footer .footer_img{height: 110px;width:90px;background-color: #66CDAA;border:1px solid #FFFFFF;float: left;margin: 0 3px;cursor:pointer;}
-#footer .footer_img p{font-family:"方正舒体";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
+#footer .footer_img p{font-family:"鏂规鑸掍綋";color:#ffffff;width: 25px;font-size: 25px;line-height: 22px;margin: 5px 25px;}
 #footer .footer_img p:hover{color: hotpink;}
 
 

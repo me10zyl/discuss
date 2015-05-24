@@ -9,6 +9,16 @@ public class Message
 	private int message_id;
 	private String message_content;
 	private String message_time;
+	private boolean message_read; 
+	public boolean isMessage_read() {
+		return message_read;
+	}
+
+
+	public void setMessage_read(boolean message_read) {
+		this.message_read = message_read;
+	}
+
 	private int message_floor;
 	private User user;
 	private Topic topic;

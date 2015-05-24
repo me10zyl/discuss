@@ -30,6 +30,7 @@
 		</action>
 		<action name="user" class="net.xicp.zyl_me.action.UserAction">
 			<result name="profile_me">profile_me.jsp</result>
+			<result name="unReadMessage">json/unReadMessage.jsp</result>
 		</action>
 	</package>
 	<include file="example.xml" />

@@ -85,6 +85,18 @@
             $(this).find(".looks").hide();
         });
     }
+    $.ajax({
+		url: "user!getUnReadMessageCount",
+		success : function(data){
+			var json = JSON.parse(data);
+			if(json.count)
+			{
+				$('#newMessage').addClass("newsCon").append("<a href='user!scanUserInformation?hover=2'>"+json.count+"</a>");
+			}else{
+				$('#newMessage a').removeClass("newCon").remove();
+			}
+		}
+	})
     function reply()
     {
     	$.ajax({

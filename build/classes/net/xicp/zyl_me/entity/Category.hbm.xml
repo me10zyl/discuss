@@ -7,6 +7,10 @@
       <generator class="native" />
     </id>
     <property name="category_name" column="category_name" not-null="true" />
+    <set name="topics" lazy="false">
+    	<key column="category_id"></key>
+    	<one-to-many class="net.xicp.zyl_me.entity.Topic"/>
+   	</set>
   </class>
 </hibernate-mapping>
 
