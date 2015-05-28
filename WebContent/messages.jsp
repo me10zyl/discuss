@@ -11,6 +11,5 @@
         </div>
         <div class="description"><s:property value="message_content"/></div>
         <div class="publicTime"><p><s:property value="message_time"/></p></div>
-        <div class="replayBtn">回&nbsp;复</div>
     </div>
 </s:iterator>

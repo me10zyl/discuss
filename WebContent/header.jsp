@@ -25,26 +25,20 @@
     <s:if test="#session.loginStatus != 'login'">
     <div class="nav">
         <a href="#">首页</a>
-       <a href="javascript:void(0)"><img src="images/search.png" width="40px" height="40px" title="搜索" id="search"></a>
         <span id="btnRegister"><a href="javascript:void(0)">注册</a></span>
         <span id="btnLogin"><a href="javascript:void(0)">登录</a></span>
     </div>
     </s:if>
     <s:else>
      <div class="nav">
-        <a href="javascript:void(0)"><img src="images/search.png" width="40px" height="40px" title="搜索" id="search"></a>
         <a href="login!logout"><img src="images/logoout.png"></a>
     </div>
     <div id="newMessage"></div>
     <div class="userPicName">
-        <a href="user!scanUserInformation"><img src="images/pic2.jpg" width="35px" height="35px" ></a>
+        <a href="user!scanUserInformation"><img src="${sessionScope.user.user_avatar }" width="35px" height="35px" ></a>
         <span><s:property value="#session.user.user_nickname"></s:property></span>
     </div>
     </s:else>
-    <div class="searchCon">
-            <input type="text" class="inpt"/>
-            <input type="button" class="searchBtn" value="搜索"/>
-    </div>
 </div>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script>

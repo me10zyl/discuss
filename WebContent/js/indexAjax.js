@@ -117,6 +117,8 @@ function register()
 					if(json.result)
 					{
 						alert('注册成功!');
+						 $("#register").remove();
+						 $("#mask").remove();
 					}else
 					{
 						alert('注册失败!'+json.message);

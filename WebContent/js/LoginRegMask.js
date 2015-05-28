@@ -41,7 +41,7 @@ window.onload=function(){
         "<td><input type='password' name='password' size='15' id='login_user_password'/></td>" +
         "</tr>" +
         "</table>"+
-        "<img src='images/login_line.png' style='margin-top:300px' /><div id='login_register'><a href='#'>注&nbsp;册</a></div><div id='Now_login'><a href='javascript:void(0)' onclick='login()'>立即登录</a></div><div id='close'></div></div>";
+        "<img src='images/login_line.png' style='margin-top:300px' /><div id='Now_login'><a href='javascript:void(0)' onclick='login()'>立即登录</a></div><div id='close'></div></div>";
 
     var oBtn=document.getElementById("btnLogin");
     if(oBtn)
@@ -71,7 +71,7 @@ window.onload=function(){
         "<td><input type='password' name='user_password_confirm' size='15' id='user_password_confirm'/></td>" +
         "</tr>" +
         "</table>"+
-        "<img src='images/register_line.png' style='margin-top:300px' /><div id='register_login'><a href='javascript:void(0)'>登&nbsp;录</a></div><div id='Now_register'><a href='javascript:void(0)' onclick='register()'>立即注册</a></div><div id='close'></div></form></div>";
+        "<img src='images/register_line.png' style='margin-top:300px' /><div id='Now_register'><a href='javascript:void(0)' onclick='register()'>立即注册</a></div><div id='close'></div></form></div>";
 	
     oBtn=document.getElementById("btnRegister");
     if(oBtn)

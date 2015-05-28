@@ -38,7 +38,7 @@
     </div>
     <div class="listShow">
         <table class="listTab" id="listTab">
-            <s:include value="topics.jsp"></s:include>
+            <s:action name="topic!getTopicList" executeResult="true" namespace="/"></s:action>
         </table>
         <div class="noTopic">这儿没有更多的主题了！</div>
     </div>

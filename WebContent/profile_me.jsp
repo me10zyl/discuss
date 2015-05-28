@@ -8,6 +8,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style type="text/css">
+#header .nav{float:right;width: 380px;height: 60px;font-family: "骞煎渾";font-size:18px;line-height:60px;}
+#header .nav a{text-decoration: none;float: left;font-weight: bold;color: #ffffff;padding: 8px 15px;}
+#header .nav a:hover{text-decoration: underline;}
+    </style>
     <link href="style/profile_me.css" rel="stylesheet">
 </head>
 <body>
@@ -16,10 +21,9 @@
 <div id="main_body">
     <div class="simpleMesBar">
         <div class="personImg">
-           <a href="#"><img src="images/pic2.jpg" width="48px" height="54px"></a>
+           <a href="#"><img src="${user.user_avatar}" width="48px" height="54px"></a>
            <span id="name">${user.user_nickname}</span>
         </div>
-        <div class="Setting">设置</div>
         <div class="Logout"><a href="login!logout">注销</a></div>
     </div>
     <div class="detailMesCon">
@@ -45,15 +49,13 @@
                     </tr>
                     <tr>
                         <td class="detailMesCon_R1tabR">头像:</td>
-                        <td class="detailMesCon_R1tabL"><img src="images/pic2.jpg" width="58px" height="64px"><input type="submit" value="上传"/><input type="file" align="left"/></td>
+                        <td class="detailMesCon_R1tabL"><img src="${user.user_avatar}" width="58px" height="64px"></td>
                     </tr>
                     <tr>
                         <td class="detailMesCon_R1tabR">个人简介:</td>
                         <td><textarea cols="20" rows="10">${user.user_introduction}</textarea></td>
                     </tr>
                 </table>
-                <div class="Modify">修改</div>
-                <div class="Save">保存</div>
             </div>
             <div class="detailMesCon_R1">
                 <ul>
