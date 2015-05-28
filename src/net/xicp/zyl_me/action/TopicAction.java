@@ -116,7 +116,6 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	public String scanTopicList() {
 		topics = topicDAO.getAll();
 		categories = categoryDAO.getAll();
-		Iterator<Message> iterator = topics.get(0).getMessages().iterator();
 		return TOPIC_LIST;
 	}
 	public String scanTopicListByCategoryId() {
@@ -277,7 +276,7 @@ public class TopicAction extends ActionSupport implements SessionAware {
 			topic.setTopic_scanCount(0);
 			topic.setTopic_title(topic_title);
 			topic.setCategory(categoryDAO.getById(category_id));
-			topic.setTopic_activeTime("just now");
+			topic.setTopic_activeTime(getCurrentTime());
 			Transaction transaction = HibernateUtil.getSession().beginTransaction();
 			boolean success = false;
 			try {
