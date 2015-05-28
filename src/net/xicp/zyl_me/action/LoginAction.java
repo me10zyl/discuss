@@ -6,6 +6,8 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import net.xicp.zyl_me.dao.UserDAO;
 import net.xicp.zyl_me.entity.User;
+import net.xicp.zyl_me.util.AvatarUtil;
+import net.xicp.zyl_me.util.HibernateUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -88,6 +90,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			user.setUser_email(user_email);
 			user.setUser_nickname(user_nickname);
 			user.setUser_password(user_password);
+			user.setUser_avatar(AvatarUtil.getRandomAvatar());
 			boolean result = userDAO.add(user);
 			if (result) {
 				message = "×¢²á³É¹¦!";
@@ -102,8 +105,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public String login() {
 		result = true;
-		System.out.println(user_email);
-		System.out.println(user_password);
 		if (user_email == null || "".equals(user_email)) {
 			result = false;
 			message = "ÓÊÏäÎª¿Õ!";

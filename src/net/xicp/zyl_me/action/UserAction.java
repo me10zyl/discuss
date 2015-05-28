@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.xicp.zyl_me.dao.MessageDAO;
 import net.xicp.zyl_me.dao.TopicDAO;
+import net.xicp.zyl_me.dao.UserDAO;
 import net.xicp.zyl_me.entity.Message;
 import net.xicp.zyl_me.entity.Topic;
 import net.xicp.zyl_me.entity.User;
@@ -17,6 +18,12 @@ public class UserAction implements SessionAware{
 	private ArrayList<Topic> topics;
 	private ArrayList<Message> replies;
 	private long unReadCount = 0;
+	public UserDAO getUserDAO() {
+		return userDAO;
+	}
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
 	public void setUnReadCount(long unReadCount) {
 		this.unReadCount = unReadCount;
 	}
@@ -26,7 +33,7 @@ public class UserAction implements SessionAware{
 	public void setReplies(ArrayList<Message> replies) {
 		this.replies = replies;
 	}
-
+	private UserDAO userDAO;
 	private TopicDAO topicDAO;
 	private MessageDAO messageDAO;
 	private Map<String, Object> session;
@@ -81,6 +88,13 @@ public class UserAction implements SessionAware{
 	{
 		topics = topicDAO.getTopicsByUserId(id);
 		replies = messageDAO.getOthersMessagesByUserId(id);
+		return PROFILE_ME;
+	}
+	
+	public String scanUserInformationById()
+	{
+		user = userDAO.getById(user.getUser_id()); 
+		scanUserInformationById(user.getUser_id());
 		return PROFILE_ME;
 	}
 	

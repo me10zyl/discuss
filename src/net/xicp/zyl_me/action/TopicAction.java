@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import net.xicp.zyl_me.dao.CategoryDAO;
 import net.xicp.zyl_me.dao.MessageDAO;
@@ -33,9 +34,17 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	private UserDAO userDAO;
 	private ArrayList<Category> categories;
 	private ArrayList<Topic> topics;
+
 	private String message_content;
 	private int category_id;
 	private int select_category_id;
+	private Set<String> topicAvatars;
+	public Set<String> getTopicAvatars() {
+		return topicAvatars;
+	}
+	public void setTopicAvatars(Set<String> topicAvatars) {
+		this.topicAvatars = topicAvatars;
+	}
 	public int getSelect_category_id() {
 		return select_category_id;
 	}
@@ -107,6 +116,7 @@ public class TopicAction extends ActionSupport implements SessionAware {
 	public String scanTopicList() {
 		topics = topicDAO.getAll();
 		categories = categoryDAO.getAll();
+		Iterator<Message> iterator = topics.get(0).getMessages().iterator();
 		return TOPIC_LIST;
 	}
 	public String scanTopicListByCategoryId() {
@@ -148,6 +158,8 @@ public class TopicAction extends ActionSupport implements SessionAware {
 
 	public String scanTopicSingle(){
 		topic = topicDAO.getById(topic_id);
+		topic.setTopic_scanCount(topic.getTopic_scanCount() + 1);
+		topicDAO.modify(topic);
 		messages = topicDAO.getMessagesById(topic_id);
 		return TOPIC_SINGLE;
 	}
@@ -175,6 +187,9 @@ public class TopicAction extends ActionSupport implements SessionAware {
 			message2.setMessage_time(getCurrentTime());
 			Topic topic = topicDAO.getById(topic_id);
 			topic.setTopic_id(topic_id);
+			topic.setTopic_replyCount(topic.getTopic_replyCount() + 1);
+			topic.setTopic_activeTime(getCurrentTime());
+			topicDAO.modify(topic);
 			message2.setTopic(topic);
 			message2.setUser(user);
 			message2.setMessage_floor(topic.getMessages().size() + 1);

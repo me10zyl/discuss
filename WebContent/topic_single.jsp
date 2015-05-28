@@ -23,7 +23,7 @@
         </div>
         <div class="topicDescription">
             <div class="personImg">
-                <a href="#"><img src="images/pic2.jpg" width="80px" height="80px"></a>
+                <a href="user!scanUserInformationById?user.user_id=<s:property value="topic.messages.{?#this.message_floor==1}.{user}[0].user_id"/>"><img src="<s:property value="topic.messages.{?#this.message_floor==1}.{user}[0].user_avatar"/>" width="80px" height="80px"></a>
                 <span class="name"><s:property value="topic.messages.{?#this.message_floor==1}.{user}[0].user_nickname"/></span>
             </div>
             <div class="description"><s:property value="topic.messages.{?#this.message_floor==1}.{message_content}[0]"/></div>

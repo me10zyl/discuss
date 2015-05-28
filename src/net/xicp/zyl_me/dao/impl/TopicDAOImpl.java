@@ -44,9 +44,23 @@ public class TopicDAOImpl extends TopicDAO {
 
 	@Override
 	public boolean modify(Topic topic) {
-		return false;
+		Transaction transaction = null;
+		boolean result = false;
+		try {
+			// TODO Auto-generated method stub
+			transaction = HibernateUtil.getSession().beginTransaction();
+			HibernateUtil.getSession().update(topic);
+			transaction.commit();
+			result = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			transaction.rollback();
+			e.printStackTrace();
+		}finally{
+			HibernateUtil.closeSession();
+		}
+		return result;		
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

@@ -10,6 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.Transaction;
 
 import net.xicp.zyl_me.dao.UserDAO;
+import net.xicp.zyl_me.entity.Topic;
 import net.xicp.zyl_me.entity.User;
 import net.xicp.zyl_me.util.HibernateUtil;
 
@@ -68,8 +69,9 @@ public class UserDAOImpl extends UserDAO {
 
 	@Override
 	public User getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = (User)HibernateUtil.getSession().get(User.class, id);
+		HibernateUtil.closeSession();
+		return user;
 	}
 
 	@Override

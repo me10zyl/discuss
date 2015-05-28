@@ -18,6 +18,5 @@
 			</div>
 		</a>
 		</c:forEach>
-		<s:debug></s:debug>
 	</div>
 </div>

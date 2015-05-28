@@ -1,6 +1,7 @@
 package net.xicp.zyl_me.entity;
 
 import java.util.ArrayList;
+
 import net.xicp.zyl_me.entity.*;
 
 public class User
@@ -87,5 +88,11 @@ public class User
 	public ArrayList<Message> getMessage()
 	{
 		return message;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return user_id == ((User)obj).user_id;
 	}
 }

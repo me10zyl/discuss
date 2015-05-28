@@ -6,7 +6,7 @@
 <s:iterator value="messages" var="message" begin="1" status="status">
  	<div class="Replayer">
         <div class="personImg">
-            <a href="#"><img src="images/pic8.jpg" width="80px" height="80px"></a>
+            <a href="user!scanUserInformationById?user.user_id=<s:property value="user.user_id"/>"><img src="<s:property value="user.user_avatar"/>" width="80px" height="80px"></a>
             <span class="name"><s:property value="user.user_nickname"/></span>
         </div>
         <div class="description"><s:property value="message_content"/></div>
